@@ -8,11 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <meta name="description" content="Welcome to my personal tech journal — a space where I share everything I am learning, building, and exploring. From coding projects to productivity tips, this blog documents my journey through the wor">
 <meta property="og:type" content="website">
-<meta property="og:title" content="AD&#39;s Logs">
-<meta property="og:url" content="http://github.com/heypolygot/archives/2025/06/index.html">
+<meta property="og:title" content="Search">
+<meta property="og:url" content="http://github.com/heypolygot/search/index.html">
 <meta property="og:site_name" content="AD&#39;s Logs">
 <meta property="og:description" content="Welcome to my personal tech journal — a space where I share everything I am learning, building, and exploring. From coding projects to productivity tips, this blog documents my journey through the wor">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-06-27T16:57:52.614Z">
+<meta property="article:modified_time" content="2025-06-27T16:57:52.614Z">
 <meta property="article:author" content="Ajay Kumar Dey">
 <meta name="twitter:card" content="summary">
     
@@ -34,7 +36,7 @@
       
     
     <!-- title -->
-    <title>Writing: 2025/6</title>
+    <title>Search</title>
     <!-- async scripts -->
     <!-- Google Analytics -->
 
@@ -91,42 +93,22 @@
 </header>
 
         
-        <div id="archive">
-  <ul class="post-list">
-    
-    
-    
-    
-      
-      
-      
-      
-        <li class="post-year"><h2>2025</h2></li>
-      
-      <li class="post-item">
-        
-    <div class="meta">
-      
-        
-          <time datetime="2025-06-26T17:54:55.000Z" class="dt-published" itemprop="datePublished">2025-06-26</time>
-        
-      
-    </div>
-
-
-        <span>
-    
-        <a class="" href="/heypolygot/2025/06/26/a/">my-website</a>
-    
-
-
-</span>
-      </li>
-    
-  </ul>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   
 
-</div>
+  <div class="content" itemprop="articleBody">
+      
+        <section id="search">
+  <form>
+    <input type="text" class="search-input" id="search-input" placeholder="Search...">
+  </form>
+  <div id="search-result"></div>
+  <p class="search-no-result">No results found.</p>
+</section>
+
+      
+  </div>
+</article>
 
         
         <footer id="footer">
@@ -177,6 +159,45 @@
 <script src="/heypolygot/js/main.js"></script>
 
 <!-- search -->
+
+  
+<script src="/heypolygot/js/search.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+
+    var $inputArea = $("input#search-input");
+    var $resultArea = document.querySelector("div#search-result");
+
+    $inputArea.focus(function() {
+      var search_path = "search.xml";
+      if (search_path.length == 0) {
+        search_path = "search.xml";
+      }
+      var path = "/heypolygot/" + search_path;
+      searchFunc(path, 'search-input', 'search-result');
+    });
+
+    $inputArea.keydown(function(e) {
+      if (e.which == 13) {
+        e.preventDefault();
+      }
+    });
+
+    var observer = new MutationObserver(function(mutationsList, observer) {
+      if (mutationsList.length == 1) {
+        if (mutationsList[0].addedNodes.length) {
+          $(".search-no-result").hide();
+        } else if (mutationsList[0].removedNodes.length) {
+          $(".search-no-result").show(200);
+        }
+      }
+    });
+
+    observer.observe($resultArea, { childList: true });
+
+  });
+  </script>
 
 <!-- Baidu Analytics -->
 
