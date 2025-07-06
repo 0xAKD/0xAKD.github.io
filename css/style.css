@@ -526,8 +526,8 @@ header .menu label {
   padding: 10px;
 }
 .intro .avatar img {
-  width: 128px;
-  height: 128px;
+  width: 200px;
+  height: 200px;
   display: inline-block;
   -webkit-border-radius: 100%;
   border-radius: 100%;
