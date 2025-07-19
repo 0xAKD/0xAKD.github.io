@@ -15,8 +15,6 @@
           
           <category> software </category>
           
-          <category> DSA </category>
-          
       </categories>
       
       
@@ -41,8 +39,6 @@
       
       
       <categories>
-          
-          <category> programming </category>
           
           <category> software </category>
           
@@ -70,10 +66,6 @@
       
       
       <categories>
-          
-          <category> electronics </category>
-          
-          <category> embedded-systems </category>
           
           <category> hardware </category>
           
